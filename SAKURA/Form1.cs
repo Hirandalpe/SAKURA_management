@@ -15,6 +15,7 @@ namespace SAKURA
     {
         //taking a public variable which can be used anywhere in the program
         public static string user;
+        
         //connecting to the database
         SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\XAMPP\mysql\SAKURA.mdf;Integrated Security=True;Connect Timeout=30");
         public Front()
@@ -31,7 +32,7 @@ namespace SAKURA
         */
         private void button1_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            Application.Exit();//exit button closes the application
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -39,11 +40,21 @@ namespace SAKURA
             this.WindowState = FormWindowState.Minimized;
         }
 
-        private void logsub_Click_1(object sender, EventArgs e)
+        
+
+        private void passtxt_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter && unametxt.Text != "")//to make the user login by pressing enter key
+            {
+                logsub_Click(this, new EventArgs());
+            }
+        }
+
+        private void logsub_Click(object sender, EventArgs e)
         {
             user = unametxt.Text;//asigning  the values entered to the textbox to the variable
 
-            
+
             if (unametxt.Text == "" || passtxt.Text == "")
             {
                 MessageBox.Show("Enter the required Fields"); //checking if all the fields are filled
@@ -52,7 +63,8 @@ namespace SAKURA
             {
                 try
                 {
-                    string qry = "SELECT * FROM Manager where Username = '" + unametxt.Text + "'"; //selecting the manager details from the database table
+
+                    string qry = "SELECT * FROM Manager where Username = '" + unametxt.Text + "' and Password='"+passtxt.Text+"'"; //selecting the manager details from the database table
                     SqlDataAdapter ad = new SqlDataAdapter(qry, con);
                     DataTable Dttb = new DataTable();
                     ad.Fill(Dttb);//asigning the data collected to a virtual table temporelly

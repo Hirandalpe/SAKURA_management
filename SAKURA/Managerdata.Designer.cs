@@ -29,22 +29,27 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Managerdata));
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Dgvmanager = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
             this.Back = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Dgvmanager)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // Dgvmanager
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 186);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(912, 407);
-            this.dataGridView1.TabIndex = 0;
+            this.Dgvmanager.AllowUserToAddRows = false;
+            this.Dgvmanager.AllowUserToDeleteRows = false;
+            this.Dgvmanager.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.Dgvmanager.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.Dgvmanager.BackgroundColor = System.Drawing.Color.DarkSlateGray;
+            this.Dgvmanager.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.Dgvmanager.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.Dgvmanager.Location = new System.Drawing.Point(0, 186);
+            this.Dgvmanager.Name = "Dgvmanager";
+            this.Dgvmanager.Size = new System.Drawing.Size(912, 407);
+            this.Dgvmanager.TabIndex = 0;
             // 
             // panel1
             // 
@@ -65,11 +70,12 @@
             this.Back.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Back.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Back.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.Back.Location = new System.Drawing.Point(772, 6);
+            this.Back.Location = new System.Drawing.Point(822, 3);
             this.Back.Name = "Back";
-            this.Back.Size = new System.Drawing.Size(53, 57);
+            this.Back.Size = new System.Drawing.Size(42, 39);
             this.Back.TabIndex = 0;
             this.Back.UseVisualStyleBackColor = false;
+            this.Back.Click += new System.EventHandler(this.Back_Click);
             // 
             // button1
             // 
@@ -80,19 +86,20 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button1.Location = new System.Drawing.Point(831, 12);
+            this.button1.Location = new System.Drawing.Point(863, 5);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(54, 45);
+            this.button1.Size = new System.Drawing.Size(30, 35);
             this.button1.TabIndex = 2;
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.label1.Location = new System.Drawing.Point(378, 12);
+            this.label1.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.label1.Location = new System.Drawing.Point(394, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(213, 36);
             this.label1.TabIndex = 3;
@@ -102,20 +109,19 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(912, 593);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.Back);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.Dgvmanager);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Managerdata";
             this.Text = "Managerdata";
             this.Load += new System.EventHandler(this.Managerdata_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Dgvmanager)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -123,7 +129,7 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView Dgvmanager;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button Back;
         private System.Windows.Forms.Button button1;

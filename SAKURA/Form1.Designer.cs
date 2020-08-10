@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Front));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -42,6 +44,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -49,7 +52,9 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.panel1.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.panel1.Controls.Add(this.pictureBox2);
+            this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.button2);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -57,6 +62,30 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1076, 32);
             this.panel1.TabIndex = 0;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.BackgroundImage")));
+            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox2.Location = new System.Drawing.Point(3, 1);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(31, 29);
+            this.pictureBox2.TabIndex = 6;
+            this.pictureBox2.TabStop = false;
+            // 
+            // label4
+            // 
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.AliceBlue;
+            this.label4.Location = new System.Drawing.Point(40, 5);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(62, 24);
+            this.label4.TabIndex = 6;
+            this.label4.Text = "Login";
             // 
             // button2
             // 
@@ -90,7 +119,6 @@
             // 
             // panel2
             // 
-            this.panel2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel2.BackgroundImage")));
             this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel2.Controls.Add(this.panel3);
             this.panel2.Controls.Add(this.pictureBox1);
@@ -119,51 +147,51 @@
             // 
             this.logsub.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.logsub.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.logsub.BackColor = System.Drawing.Color.MidnightBlue;
+            this.logsub.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.logsub.Cursor = System.Windows.Forms.Cursors.Hand;
             this.logsub.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.logsub.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.logsub.ForeColor = System.Drawing.SystemColors.MenuBar;
+            this.logsub.ForeColor = System.Drawing.Color.LightCyan;
             this.logsub.Location = new System.Drawing.Point(279, 384);
             this.logsub.Name = "logsub";
             this.logsub.Size = new System.Drawing.Size(141, 49);
             this.logsub.TabIndex = 5;
             this.logsub.Text = "Submit";
             this.logsub.UseVisualStyleBackColor = false;
-            this.logsub.Click += new System.EventHandler(this.logsub_Click_1);
+            this.logsub.Click += new System.EventHandler(this.logsub_Click);
             // 
             // passtxt
             // 
             this.passtxt.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.passtxt.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.passtxt.BackColor = System.Drawing.Color.LightCyan;
             this.passtxt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.passtxt.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.passtxt.ForeColor = System.Drawing.Color.DarkBlue;
+            this.passtxt.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.passtxt.Location = new System.Drawing.Point(194, 300);
             this.passtxt.Name = "passtxt";
             this.passtxt.PasswordChar = '*';
             this.passtxt.Size = new System.Drawing.Size(226, 32);
             this.passtxt.TabIndex = 4;
-            this.passtxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.passtxt.KeyDown += new System.Windows.Forms.KeyEventHandler(this.passtxt_KeyDown);
             // 
             // unametxt
             // 
             this.unametxt.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.unametxt.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.unametxt.BackColor = System.Drawing.Color.LightCyan;
             this.unametxt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.unametxt.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.unametxt.ForeColor = System.Drawing.Color.DarkBlue;
+            this.unametxt.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.unametxt.Location = new System.Drawing.Point(194, 210);
             this.unametxt.Name = "unametxt";
             this.unametxt.Size = new System.Drawing.Size(226, 32);
             this.unametxt.TabIndex = 3;
-            this.unametxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label3
             // 
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.DarkBlue;
+            this.label3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label3.Location = new System.Drawing.Point(53, 304);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(96, 24);
@@ -175,7 +203,7 @@
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.DarkBlue;
+            this.label2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label2.Location = new System.Drawing.Point(53, 214);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(100, 24);
@@ -187,8 +215,8 @@
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.label1.Location = new System.Drawing.Point(142, 93);
+            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.Location = new System.Drawing.Point(170, 85);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(143, 55);
             this.label1.TabIndex = 0;
@@ -215,8 +243,11 @@
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Front";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
@@ -239,6 +270,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Label label4;
     }
 }
 
