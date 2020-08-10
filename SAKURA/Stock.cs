@@ -26,6 +26,12 @@ namespace SAKURA
             InitializeComponent();
         }
 
+        /// <summary>
+        /// This ccode provides the code to load the datagridview on load of form
+        /// it loads all the data available in the table to the datagridview
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Stock_Load(object sender, EventArgs e)
         {
             string qry = "SELECT * FROM Stock"; //selecting the Stock details from the database table

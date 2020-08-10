@@ -119,12 +119,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>SAKURADataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Sales.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Sales.Designer.cs">
-      <DependentUpon>Sales.cs</DependentUpon>
-    </Compile>
     <Compile Include="Stock.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -171,9 +165,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Sales.resx">
-      <DependentUpon>Sales.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Stock.resx">
       <DependentUpon>Stock.cs</DependentUpon>
     </EmbeddedResource>
