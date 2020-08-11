@@ -60,20 +60,20 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.button10 = new System.Windows.Forms.Button();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.cattxt = new System.Windows.Forms.TextBox();
             this.button11 = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.panel8 = new System.Windows.Forms.Panel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel7 = new System.Windows.Forms.Panel();
+            this.typechk = new System.Windows.Forms.CheckBox();
+            this.categorychk = new System.Windows.Forms.CheckBox();
             this.label9 = new System.Windows.Forms.Label();
             this.button8 = new System.Windows.Forms.Button();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
-            this.cattxt = new System.Windows.Forms.TextBox();
-            this.categorychk = new System.Windows.Forms.CheckBox();
-            this.typechk = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvstock)).BeginInit();
@@ -522,6 +522,17 @@
             this.panel6.Size = new System.Drawing.Size(440, 431);
             this.panel6.TabIndex = 12;
             // 
+            // cattxt
+            // 
+            this.cattxt.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cattxt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.cattxt.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cattxt.ForeColor = System.Drawing.Color.Black;
+            this.cattxt.Location = new System.Drawing.Point(97, 66);
+            this.cattxt.Name = "cattxt";
+            this.cattxt.Size = new System.Drawing.Size(223, 29);
+            this.cattxt.TabIndex = 24;
+            // 
             // button11
             // 
             this.button11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -567,7 +578,7 @@
             this.flowLayoutPanel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowLayoutPanel1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.flowLayoutPanel1.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 219);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(433, 212);
@@ -587,6 +598,34 @@
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(433, 219);
             this.panel7.TabIndex = 1;
+            // 
+            // typechk
+            // 
+            this.typechk.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.typechk.AutoSize = true;
+            this.typechk.BackColor = System.Drawing.Color.Transparent;
+            this.typechk.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.typechk.ForeColor = System.Drawing.Color.Black;
+            this.typechk.Location = new System.Drawing.Point(255, 123);
+            this.typechk.Name = "typechk";
+            this.typechk.Size = new System.Drawing.Size(68, 27);
+            this.typechk.TabIndex = 25;
+            this.typechk.Text = "Type";
+            this.typechk.UseVisualStyleBackColor = false;
+            // 
+            // categorychk
+            // 
+            this.categorychk.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.categorychk.AutoSize = true;
+            this.categorychk.BackColor = System.Drawing.Color.Transparent;
+            this.categorychk.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.categorychk.ForeColor = System.Drawing.Color.Black;
+            this.categorychk.Location = new System.Drawing.Point(92, 123);
+            this.categorychk.Name = "categorychk";
+            this.categorychk.Size = new System.Drawing.Size(104, 27);
+            this.categorychk.TabIndex = 25;
+            this.categorychk.Text = "Category";
+            this.categorychk.UseVisualStyleBackColor = false;
             // 
             // label9
             // 
@@ -656,45 +695,6 @@
             // printDocument1
             // 
             this.printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument1_PrintPage);
-            // 
-            // cattxt
-            // 
-            this.cattxt.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cattxt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.cattxt.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cattxt.ForeColor = System.Drawing.Color.Black;
-            this.cattxt.Location = new System.Drawing.Point(97, 66);
-            this.cattxt.Name = "cattxt";
-            this.cattxt.Size = new System.Drawing.Size(223, 29);
-            this.cattxt.TabIndex = 24;
-            // 
-            // categorychk
-            // 
-            this.categorychk.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.categorychk.AutoSize = true;
-            this.categorychk.BackColor = System.Drawing.Color.Transparent;
-            this.categorychk.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.categorychk.ForeColor = System.Drawing.Color.Black;
-            this.categorychk.Location = new System.Drawing.Point(92, 123);
-            this.categorychk.Name = "categorychk";
-            this.categorychk.Size = new System.Drawing.Size(104, 27);
-            this.categorychk.TabIndex = 25;
-            this.categorychk.Text = "Category";
-            this.categorychk.UseVisualStyleBackColor = false;
-            // 
-            // typechk
-            // 
-            this.typechk.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.typechk.AutoSize = true;
-            this.typechk.BackColor = System.Drawing.Color.Transparent;
-            this.typechk.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.typechk.ForeColor = System.Drawing.Color.Black;
-            this.typechk.Location = new System.Drawing.Point(255, 123);
-            this.typechk.Name = "typechk";
-            this.typechk.Size = new System.Drawing.Size(68, 27);
-            this.typechk.TabIndex = 25;
-            this.typechk.Text = "Type";
-            this.typechk.UseVisualStyleBackColor = false;
             // 
             // Stock
             // 

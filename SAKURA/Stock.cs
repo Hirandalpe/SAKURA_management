@@ -20,7 +20,7 @@ namespace SAKURA
         public static string type;
         public static string catagory;
 
-        SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\XAMPP\mysql\SAKURA.mdf;Integrated Security=True;Connect Timeout=30");
+        SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\SAKURA.mdf;Integrated Security=True;Connect Timeout=30");
         public Stock()
         {
             InitializeComponent();
@@ -184,10 +184,11 @@ namespace SAKURA
                 {
                     Button but = new Button();
                     but.Text = dr.GetValue(0).ToString();                    
-                    but.BackColor = Color.DeepSkyBlue;
+                    but.BackColor = Color.DarkCyan;
                     but.Width = 157;
                     but.Height = 47;
-                    but.ForeColor = Color.Black;
+                    but.TextAlign = ContentAlignment.MiddleCenter;
+                    but.ForeColor = Color.White;
                     but.FlatStyle = FlatStyle.Popup;
                     but.Click += But_Click;
                     flowLayoutPanel1.Controls.Add(but);
@@ -228,12 +229,14 @@ namespace SAKURA
                 {
                     Button but1 = new Button();
                     but1.Text = dr.GetValue(0).ToString();
-                    but1.BackColor = Color.DeepSkyBlue;
+                    but1.BackColor = Color.DarkCyan;
                     but1.Width = 157;
                     but1.Height = 47;
-                    but1.ForeColor = Color.Black;
+                    but1.TextAlign = ContentAlignment.MiddleCenter;
+                    but1.ForeColor = Color.White;
                     but1.FlatStyle = FlatStyle.Popup;
                     but1.Click += But1_Click;
+                    
                     flowLayoutPanel1.Controls.Add(but1);
                     i++;
                 }

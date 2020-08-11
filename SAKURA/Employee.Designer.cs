@@ -250,9 +250,9 @@
             this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button8.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button8.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button8.Location = new System.Drawing.Point(263, 452);
+            this.button8.Location = new System.Drawing.Point(278, 452);
             this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(161, 46);
+            this.button8.Size = new System.Drawing.Size(189, 46);
             this.button8.TabIndex = 8;
             this.button8.Text = "Print Salary Slip";
             this.button8.UseVisualStyleBackColor = false;
