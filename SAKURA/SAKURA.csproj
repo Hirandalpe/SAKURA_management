@@ -12,7 +12,8 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
-    <PublishUrl>publish\</PublishUrl>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>C:\Sakura\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
     <UpdateEnabled>false</UpdateEnabled>
@@ -22,10 +23,11 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationRevision>7</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
+    <CreateDesktopShortcut>true</CreateDesktopShortcut>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -46,6 +48,18 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>97C420079F66D3E73F7B9031325646AA707F8958</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>SAKURA_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System">
@@ -69,6 +83,18 @@
     </Compile>
     <Compile Include="Addemployee.Designer.cs">
       <DependentUpon>Addemployee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="column.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="column.Designer.cs">
+      <DependentUpon>column.cs</DependentUpon>
+    </Compile>
+    <Compile Include="dailysalesupdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dailysalesupdate.Designer.cs">
+      <DependentUpon>dailysalesupdate.cs</DependentUpon>
     </Compile>
     <Compile Include="DeleteEmployee.cs">
       <SubType>Form</SubType>
@@ -106,6 +132,12 @@
     <Compile Include="Managerdata.Designer.cs">
       <DependentUpon>Managerdata.cs</DependentUpon>
     </Compile>
+    <Compile Include="panel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="panel.Designer.cs">
+      <DependentUpon>panel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Product.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -119,11 +151,22 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>SAKURADataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="SakuradbDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SakuradbDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Stock.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Stock.Designer.cs">
       <DependentUpon>Stock.cs</DependentUpon>
+    </Compile>
+    <Compile Include="test.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="test.Designer.cs">
+      <DependentUpon>test.cs</DependentUpon>
     </Compile>
     <Compile Include="UpdateEmployee.cs">
       <SubType>Form</SubType>
@@ -133,6 +176,12 @@
     </Compile>
     <EmbeddedResource Include="Addemployee.resx">
       <DependentUpon>Addemployee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="column.resx">
+      <DependentUpon>column.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="dailysalesupdate.resx">
+      <DependentUpon>dailysalesupdate.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DeleteEmployee.resx">
       <DependentUpon>DeleteEmployee.cs</DependentUpon>
@@ -152,6 +201,9 @@
     <EmbeddedResource Include="Managerdata.resx">
       <DependentUpon>Managerdata.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="panel.resx">
+      <DependentUpon>panel.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Product.resx">
       <DependentUpon>Product.cs</DependentUpon>
     </EmbeddedResource>
@@ -167,6 +219,9 @@
     </Compile>
     <EmbeddedResource Include="Stock.resx">
       <DependentUpon>Stock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="test.resx">
+      <DependentUpon>test.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UpdateEmployee.resx">
       <DependentUpon>UpdateEmployee.cs</DependentUpon>
@@ -191,14 +246,57 @@
     <None Include="SAKURADataSet.xss">
       <DependentUpon>SAKURADataSet.xsd</DependentUpon>
     </None>
+    <None Include="SakuradbDataSet.xsc">
+      <DependentUpon>SakuradbDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="SakuradbDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SakuradbDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SakuradbDataSet.xss">
+      <DependentUpon>SakuradbDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="SAKURA_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\sakubit.bmp" />
+    <None Include="Resources\stock.png" />
+    <None Include="Resources\updateemp.png" />
+    <None Include="Resources\addemp.png" />
+    <None Include="Resources\deleteemp.png" />
+    <None Include="Resources\empinfo.png" />
+    <None Include="Resources\manager.png" />
+    <None Include="Resources\product.png" />
+    <None Include="Resources\checkmark_96px.png" />
+    <None Include="Resources\delete_96px.png" />
+    <None Include="Resources\dash.png" />
+    <None Include="Resources\deletet.png" />
+    <None Include="Resources\men.png" />
+    <None Include="Resources\women.png" />
+    <None Include="Resources\trolley_64px.png" />
+    <None Include="Resources\Picture1print.png" />
+    <None Include="Resources\knitted_cardigan_512px.png" />
+    <None Include="Resources\kids.png" />
+    <None Include="Resources\close_window_96px.png" />
+    <None Include="Resources\minimize_window_96px.png" />
+    <None Include="Resources\Picture4.png" />
+    <None Include="Resources\Picture3.png" />
+    <None Include="Resources\Sale.png" />
+    <None Include="Resources\Customers.png" />
+    <None Include="Resources\warehouse_200pxq.png" />
     <Content Include="SAKURA.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sakuradb.mdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sakuradb_log.ldf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <DependentUpon>Sakuradb.mdf</DependentUpon>
     </Content>
     <Content Include="SAKURA_log.ldf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -216,6 +314,28 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <PublishFile Include="SAKURA.mdf">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="SAKURA_log.ldf">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

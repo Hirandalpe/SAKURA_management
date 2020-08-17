@@ -34,6 +34,7 @@
             this.Back = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.Dgvmanager)).BeginInit();
             this.SuspendLayout();
             // 
@@ -46,6 +47,7 @@
             this.Dgvmanager.BackgroundColor = System.Drawing.Color.DarkSlateGray;
             this.Dgvmanager.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.Dgvmanager.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.Dgvmanager.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.Dgvmanager.Location = new System.Drawing.Point(0, 186);
             this.Dgvmanager.Name = "Dgvmanager";
             this.Dgvmanager.Size = new System.Drawing.Size(912, 407);
@@ -105,12 +107,26 @@
             this.label1.TabIndex = 3;
             this.label1.Text = "Manager Data";
             // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.DarkCyan;
+            this.button2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button2.BackgroundImage")));
+            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button2.Location = new System.Drawing.Point(763, 97);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(130, 83);
+            this.button2.TabIndex = 4;
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // Managerdata
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(912, 593);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.Back);
@@ -134,5 +150,6 @@
         private System.Windows.Forms.Button Back;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button button2;
     }
 }

@@ -15,7 +15,7 @@ namespace SAKURA
     public partial class Product : Form
     {
         //connecting the database with the form
-        SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\SAKURA.mdf;Integrated Security=True;Connect Timeout=30");
+        SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\sakuraDB\Sakuradb.mdf;Integrated Security=True;Connect Timeout=30");
 
         public Product()
         {
@@ -26,7 +26,12 @@ namespace SAKURA
         {
             showdata();//line 160
         }
-
+        
+        /// <summary>
+        /// front(login) opens and closes what ever left in the screen
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button2_Click(object sender, EventArgs e)
         {
             Front fr = new Front();
@@ -58,7 +63,7 @@ namespace SAKURA
                     try
                     {
                         dgvproduct.DataSource = DTb.DefaultView;//fills the datagridview with the data taken into the datatable
-                        txtcat.Text = "";//cear the textbox
+                        txtcat.Text = "";//clear the textbox
                         checkBox1.Checked = false;
                     }
                     catch (Exception ex)
@@ -125,7 +130,6 @@ namespace SAKURA
             {
                 try
                 {
-
                     string qry = "SELECT * FROM Product_info WHERE Code = '" + Codetxt.Text + "'"; //selecting the item code details from the database table if there is any
                     SqlDataAdapter ad = new SqlDataAdapter(qry, con);
                     DataTable Dttb = new DataTable();
@@ -297,10 +301,14 @@ namespace SAKURA
                         string del = "DELETE  FROM Product_info WHERE Code='" + Codetxt.Text + "'";
                         SqlCommand dq = new SqlCommand(del, con);
 
+                        string delst = "DELETE  FROM Stock WHERE Code='" + Codetxt.Text + "'";
+                        SqlCommand dqst = new SqlCommand(delst, con);
+
                         try
                         {
                             con.Open();
                             dq.ExecuteNonQuery();
+                            dqst.ExecuteNonQuery();
                             MessageBox.Show("Item Deleted Successfully!");
                             showdata();
                             clear();
@@ -451,9 +459,19 @@ namespace SAKURA
 
             e.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
 
+
             e.Graphics.DrawImage(Properties.Resources.sakubit, 350, 20, 150, 130);
-            e.Graphics.DrawLine(new Pen(Color.MidnightBlue), new PointF(0, 150), new PointF(900, 150));
-            e.Graphics.DrawString(rep_name, new Font("Times New Roman", 14, FontStyle.Bold), Brushes.MidnightBlue, new PointF(350, 160));
+            e.Graphics.DrawLine(new Pen(Color.MidnightBlue), new PointF(0, 150), new PointF(900, 140));
+            e.Graphics.DrawString(rep_name, new Font("Times New Roman", 14, FontStyle.Bold), Brushes.MidnightBlue, new PointF(350, 150));
+
+            string today = "Date:- ";
+            DateTime tdy = DateTime.Today;
+            string now = tdy.ToString();
+            string nowdt = now.Substring(0, now.Length - 11);
+
+
+            e.Graphics.DrawString(today, new Font("Times New Roman", 12, FontStyle.Bold), Brushes.Black, new PointF(100, 185));
+            e.Graphics.DrawString(nowdt, new Font("Times New Roman", 12, FontStyle.Bold), Brushes.Black, new PointF(260, 185));
 
             e.Graphics.DrawString(col1, new Font("Times New Roman", 12, FontStyle.Bold), Brushes.Black, new PointF(T_width, T_height));
             e.Graphics.DrawString(col2, new Font("Times New Roman", 12, FontStyle.Bold), Brushes.Black, new PointF(T_width + 100, T_height));
@@ -515,6 +533,22 @@ namespace SAKURA
         private void label4_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void Typechk_CheckedChanged(object sender, EventArgs e)
+        {
+            if (categorychk.Checked == true)
+            {
+                categorychk.Checked = false;
+            }
+        }
+
+        private void categorychk_CheckedChanged(object sender, EventArgs e)
+        {
+            if (Typechk.Checked == true)
+            {
+                Typechk.Checked = false;
+            }
         }
     }
 }

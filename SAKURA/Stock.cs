@@ -20,7 +20,8 @@ namespace SAKURA
         public static string type;
         public static string catagory;
 
-        SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\SAKURA.mdf;Integrated Security=True;Connect Timeout=30");
+        SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\sakuraDB\Sakuradb.mdf;Integrated Security=True;Connect Timeout=30");
+
         public Stock()
         {
             InitializeComponent();
@@ -544,10 +545,11 @@ namespace SAKURA
             string nowdt = now.Substring(0, now.Length - 11);
 
             
-            e.Graphics.DrawString(today, new Font("Times New Roman", 14, FontStyle.Bold), Brushes.Black, new PointF(100, 185));
-            e.Graphics.DrawString(nowdt, new Font("Times New Roman", 14, FontStyle.Bold), Brushes.Black, new PointF(260, 175));
-            e.Graphics.DrawString(last, new Font("Times New Roman", 14, FontStyle.Bold), Brushes.Black, new PointF(100, 215));
-            string update = "SELECT date FROM UpdateDate WHERE id='"+1+"'";
+            e.Graphics.DrawString(today, new Font("Times New Roman", 13, FontStyle.Bold), Brushes.Black, new PointF(100, 185));
+            e.Graphics.DrawString(nowdt, new Font("Times New Roman", 12, FontStyle.Bold), Brushes.Black, new PointF(260, 185));
+            e.Graphics.DrawString(last, new Font("Times New Roman", 13, FontStyle.Bold), Brushes.Black, new PointF(100, 215));
+
+            string update = "SELECT Date From UpdateDate WHERE id='" + 1 + "'";
             SqlCommand com1 = new SqlCommand(update, con);
             SqlDataReader dr1 = com1.ExecuteReader();
             while (dr1.Read())
@@ -555,22 +557,16 @@ namespace SAKURA
                 try
                 {
                     string lastdate = dr1.GetValue(0).ToString();
-                    
-                    e.Graphics.DrawString(lastdate.Substring(0,lastdate.Length-11), new Font("Times New Roman", 14, FontStyle.Bold), Brushes.Black, new PointF(260, 215));
+                    e.Graphics.DrawString(lastdate.Substring(0,lastdate.Length-11), new Font("Times New Roman", 12, FontStyle.Bold), Brushes.Black, new PointF(260, 215));
                 }
-                catch (Exception ex)
+                catch(Exception ex)
                 {
                     MessageBox.Show(ex.ToString());
                 }
 
             }
             dr1.Close();
-
-
-
-
-
-
+            
 
             string query = "SELECT * FROM Stock";
             SqlCommand com = new SqlCommand(query, con);
@@ -615,6 +611,20 @@ namespace SAKURA
 
         }
 
-        
+        private void categorychk_CheckedChanged(object sender, EventArgs e)
+        {
+            if (typechk.Checked == true)
+            {
+                typechk.Checked = false;
+            }
+        }
+
+        private void typechk_CheckedChanged(object sender, EventArgs e)
+        {
+            if (categorychk.Checked == true)
+            {
+                categorychk.Checked = false;
+            }
+        }
     }
 }

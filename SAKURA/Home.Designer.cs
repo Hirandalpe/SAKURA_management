@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Home));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.button3 = new System.Windows.Forms.Button();
@@ -39,14 +41,16 @@
             this.label2 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.Empbut = new System.Windows.Forms.Button();
-            this.Stockbut = new System.Windows.Forms.Button();
-            this.Prodbut = new System.Windows.Forms.Button();
             this.DGVshow = new System.Windows.Forms.DataGridView();
             this.panel7 = new System.Windows.Forms.Panel();
+            this.button4 = new System.Windows.Forms.Button();
+            this.Prodbut = new System.Windows.Forms.Button();
+            this.Stockbut = new System.Windows.Forms.Button();
+            this.Empbut = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.button5 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -78,19 +82,20 @@
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(1380, 194);
             this.panel6.TabIndex = 1;
+            this.panel6.Paint += new System.Windows.Forms.PaintEventHandler(this.panel6_Paint);
             this.panel6.MouseClick += new System.Windows.Forms.MouseEventHandler(this.panel6_MouseClick);
             // 
             // button3
             // 
             this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.button3.BackColor = System.Drawing.Color.DarkCyan;
-            this.button3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button3.BackgroundImage")));
+            this.button3.BackgroundImage = global::SAKURA.Properties.Resources.manager;
             this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button3.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.button3.Location = new System.Drawing.Point(1160, 56);
+            this.button3.Location = new System.Drawing.Point(1160, 49);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(160, 135);
             this.button3.TabIndex = 8;
@@ -186,65 +191,6 @@
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // Empbut
-            // 
-            this.Empbut.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.Empbut.BackColor = System.Drawing.Color.DarkCyan;
-            this.Empbut.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Empbut.BackgroundImage")));
-            this.Empbut.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.Empbut.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Empbut.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.Empbut.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Empbut.ForeColor = System.Drawing.Color.SlateBlue;
-            this.Empbut.Location = new System.Drawing.Point(861, -3);
-            this.Empbut.Name = "Empbut";
-            this.Empbut.Size = new System.Drawing.Size(165, 135);
-            this.Empbut.TabIndex = 4;
-            this.Empbut.UseVisualStyleBackColor = false;
-            this.Empbut.Click += new System.EventHandler(this.Empbut_Click);
-            this.Empbut.MouseEnter += new System.EventHandler(this.Empbut_MouseEnter);
-            this.Empbut.MouseLeave += new System.EventHandler(this.Empbut_MouseLeave);
-            this.Empbut.MouseHover += new System.EventHandler(this.Empbut_MouseHover);
-            // 
-            // Stockbut
-            // 
-            this.Stockbut.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.Stockbut.BackColor = System.Drawing.Color.DarkCyan;
-            this.Stockbut.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Stockbut.BackgroundImage")));
-            this.Stockbut.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.Stockbut.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Stockbut.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.Stockbut.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Stockbut.ForeColor = System.Drawing.Color.SlateBlue;
-            this.Stockbut.Location = new System.Drawing.Point(581, -3);
-            this.Stockbut.Name = "Stockbut";
-            this.Stockbut.Size = new System.Drawing.Size(160, 138);
-            this.Stockbut.TabIndex = 3;
-            this.Stockbut.UseVisualStyleBackColor = false;
-            this.Stockbut.Click += new System.EventHandler(this.Stockbut_Click);
-            this.Stockbut.MouseEnter += new System.EventHandler(this.Stockbut_MouseEnter);
-            this.Stockbut.MouseLeave += new System.EventHandler(this.Stockbut_MouseLeave);
-            this.Stockbut.MouseHover += new System.EventHandler(this.Stockbut_MouseHover);
-            // 
-            // Prodbut
-            // 
-            this.Prodbut.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.Prodbut.BackColor = System.Drawing.Color.DarkCyan;
-            this.Prodbut.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Prodbut.BackgroundImage")));
-            this.Prodbut.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.Prodbut.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Prodbut.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.Prodbut.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Prodbut.ForeColor = System.Drawing.Color.SlateBlue;
-            this.Prodbut.Location = new System.Drawing.Point(280, 0);
-            this.Prodbut.Name = "Prodbut";
-            this.Prodbut.Size = new System.Drawing.Size(165, 133);
-            this.Prodbut.TabIndex = 2;
-            this.Prodbut.UseVisualStyleBackColor = false;
-            this.Prodbut.Click += new System.EventHandler(this.Prodbut_Click);
-            this.Prodbut.MouseEnter += new System.EventHandler(this.Prodbut_MouseEnter);
-            this.Prodbut.MouseLeave += new System.EventHandler(this.Prodbut_MouseLeave);
-            // 
             // DGVshow
             // 
             this.DGVshow.AllowUserToAddRows = false;
@@ -252,8 +198,25 @@
             this.DGVshow.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.DGVshow.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.DGVshow.BackgroundColor = System.Drawing.Color.DarkSlateGray;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DGVshow.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.DGVshow.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DGVshow.DefaultCellStyle = dataGridViewCellStyle2;
             this.DGVshow.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.DGVshow.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.DGVshow.Location = new System.Drawing.Point(0, 133);
             this.DGVshow.Name = "DGVshow";
             this.DGVshow.Size = new System.Drawing.Size(1380, 494);
@@ -261,6 +224,9 @@
             // 
             // panel7
             // 
+            this.panel7.BackColor = System.Drawing.Color.Transparent;
+            this.panel7.Controls.Add(this.button5);
+            this.panel7.Controls.Add(this.button4);
             this.panel7.Controls.Add(this.Prodbut);
             this.panel7.Controls.Add(this.Stockbut);
             this.panel7.Controls.Add(this.Empbut);
@@ -270,6 +236,82 @@
             this.panel7.Size = new System.Drawing.Size(1380, 133);
             this.panel7.TabIndex = 8;
             this.panel7.MouseClick += new System.Windows.Forms.MouseEventHandler(this.panel7_MouseClick);
+            // 
+            // button4
+            // 
+            this.button4.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.button4.BackColor = System.Drawing.Color.DarkCyan;
+            this.button4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button4.BackgroundImage")));
+            this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button4.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.ForeColor = System.Drawing.Color.SlateBlue;
+            this.button4.Location = new System.Drawing.Point(864, 0);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(165, 135);
+            this.button4.TabIndex = 5;
+            this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // Prodbut
+            // 
+            this.Prodbut.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.Prodbut.BackColor = System.Drawing.Color.DarkCyan;
+            this.Prodbut.BackgroundImage = global::SAKURA.Properties.Resources.product;
+            this.Prodbut.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.Prodbut.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Prodbut.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.Prodbut.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Prodbut.ForeColor = System.Drawing.Color.SlateBlue;
+            this.Prodbut.Location = new System.Drawing.Point(82, 1);
+            this.Prodbut.Name = "Prodbut";
+            this.Prodbut.Size = new System.Drawing.Size(165, 133);
+            this.Prodbut.TabIndex = 2;
+            this.Prodbut.UseVisualStyleBackColor = false;
+            this.Prodbut.Click += new System.EventHandler(this.Prodbut_Click);
+            this.Prodbut.MouseEnter += new System.EventHandler(this.Prodbut_MouseEnter);
+            this.Prodbut.MouseLeave += new System.EventHandler(this.Prodbut_MouseLeave);
+            // 
+            // Stockbut
+            // 
+            this.Stockbut.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.Stockbut.BackColor = System.Drawing.Color.DarkCyan;
+            this.Stockbut.BackgroundImage = global::SAKURA.Properties.Resources.stock;
+            this.Stockbut.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.Stockbut.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Stockbut.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.Stockbut.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Stockbut.ForeColor = System.Drawing.Color.SlateBlue;
+            this.Stockbut.Location = new System.Drawing.Point(347, -2);
+            this.Stockbut.Name = "Stockbut";
+            this.Stockbut.Size = new System.Drawing.Size(160, 138);
+            this.Stockbut.TabIndex = 3;
+            this.Stockbut.UseVisualStyleBackColor = false;
+            this.Stockbut.Click += new System.EventHandler(this.Stockbut_Click);
+            this.Stockbut.MouseEnter += new System.EventHandler(this.Stockbut_MouseEnter);
+            this.Stockbut.MouseLeave += new System.EventHandler(this.Stockbut_MouseLeave);
+            this.Stockbut.MouseHover += new System.EventHandler(this.Stockbut_MouseHover);
+            // 
+            // Empbut
+            // 
+            this.Empbut.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.Empbut.BackColor = System.Drawing.Color.DarkCyan;
+            this.Empbut.BackgroundImage = global::SAKURA.Properties.Resources.empinfo;
+            this.Empbut.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.Empbut.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Empbut.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.Empbut.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Empbut.ForeColor = System.Drawing.Color.SlateBlue;
+            this.Empbut.Location = new System.Drawing.Point(605, -2);
+            this.Empbut.Name = "Empbut";
+            this.Empbut.Size = new System.Drawing.Size(165, 135);
+            this.Empbut.TabIndex = 4;
+            this.Empbut.UseVisualStyleBackColor = false;
+            this.Empbut.Click += new System.EventHandler(this.Empbut_Click);
+            this.Empbut.MouseEnter += new System.EventHandler(this.Empbut_MouseEnter);
+            this.Empbut.MouseLeave += new System.EventHandler(this.Empbut_MouseLeave);
+            this.Empbut.MouseHover += new System.EventHandler(this.Empbut_MouseHover);
             // 
             // panel2
             // 
@@ -307,6 +349,22 @@
             this.label4.Size = new System.Drawing.Size(615, 83);
             this.label4.TabIndex = 10;
             this.label4.Text = "Sakura Fashions";
+            // 
+            // button5
+            // 
+            this.button5.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.button5.BackColor = System.Drawing.Color.DarkCyan;
+            this.button5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button5.BackgroundImage")));
+            this.button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button5.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button5.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button5.ForeColor = System.Drawing.Color.SlateBlue;
+            this.button5.Location = new System.Drawing.Point(1125, -2);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(165, 135);
+            this.button5.TabIndex = 6;
+            this.button5.UseVisualStyleBackColor = false;
             // 
             // Home
             // 
@@ -356,5 +414,7 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button5;
     }
 }

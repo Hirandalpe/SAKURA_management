@@ -176,6 +176,7 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvstock.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvstock.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvstock.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvstock.Enabled = false;
             this.dgvstock.Location = new System.Drawing.Point(0, 464);
             this.dgvstock.Name = "dgvstock";
@@ -612,6 +613,7 @@
             this.typechk.TabIndex = 25;
             this.typechk.Text = "Type";
             this.typechk.UseVisualStyleBackColor = false;
+            this.typechk.CheckedChanged += new System.EventHandler(this.typechk_CheckedChanged);
             // 
             // categorychk
             // 
@@ -626,6 +628,7 @@
             this.categorychk.TabIndex = 25;
             this.categorychk.Text = "Category";
             this.categorychk.UseVisualStyleBackColor = false;
+            this.categorychk.CheckedChanged += new System.EventHandler(this.categorychk_CheckedChanged);
             // 
             // label9
             // 

@@ -12,10 +12,10 @@ using System.Data.SqlClient;
 namespace SAKURA
 {
     public partial class Manager : Form
-    { 
+    {
         //connecting to the database
-        SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\SAKURA.mdf;Integrated Security=True;Connect Timeout=30");
-    
+        SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\sakuraDB\Sakuradb.mdf;Integrated Security=True;Connect Timeout=30");
+
         public Manager()
         {
             InitializeComponent();
@@ -65,7 +65,8 @@ namespace SAKURA
                 try
                 {
                     SqlCommand cmd = new SqlCommand("UPDATE Manager SET Password=@Password, Name=@Name, PhoneNo=@PhoneNo WHERE Username=@Username", con);//accessing the data in the database
-                    con.Open();
+                    if (con.State == ConnectionState.Closed)
+                        con.Open();
                     cmd.Parameters.AddWithValue("@Password", Passwordtxt.Text);//add with value gives provides the values entered to the textboxes to the assigned parameters
                     cmd.Parameters.AddWithValue("@Name", txtname.Text);
                     cmd.Parameters.AddWithValue("@PhoneNo", int.Parse(txtphone.Text));
@@ -137,8 +138,10 @@ namespace SAKURA
         {
             try
             {
-                con.Open();
-                string show = "Select Password, Name, PhoneNo FROM Manager WHERE Code = '" + Usertxt.Text + "'";
+                if(con.State == ConnectionState.Closed)
+                    con.Open();
+
+                string show = "Select Password, Name, PhoneNo FROM Manager WHERE Username = '" + Usertxt.Text + "'";
                 SqlCommand com = new SqlCommand(show, con);
                 SqlDataReader dr = com.ExecuteReader();
                 while (dr.Read())
@@ -147,12 +150,23 @@ namespace SAKURA
                     txtname.Text = dr.GetValue(1).ToString();
                     txtphone.Text = dr.GetValue(2).ToString();
                 }
-                con.Close();
+                
             }
             catch(Exception ex)
             {
                 MessageBox.Show(ex.ToString());
             }
+            finally
+            {
+                con.Close();
+            }
         }
+
+        private void Manager_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        
     }
 }
